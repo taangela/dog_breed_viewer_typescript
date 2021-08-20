@@ -1,0 +1,25 @@
+@import '../../styles/settings.scss';
+
+form {
+  font-family: 'Inter';
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+form > div {
+ display: inline;
+}
+
+label {
+  margin-right: 30px;
+}
+
+input {
+  border: 2px solid #6596E2;
+  border-radius: 4px;
+
+  &:focus {
+    outline: none; 
+    border: 2px solid #2364aa;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../styles/settings.scss';
+//@import "~bootstrap/scss/bootstrap";
+
+
+.app {
+  text-align: center;
+  margin: auto;
+  color: $font-color;
+
+  > p {
+    font-family: 'Inter';
+    padding: 15px 30px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: $border;
+    display:inline-block;
+  }
+}
+
+

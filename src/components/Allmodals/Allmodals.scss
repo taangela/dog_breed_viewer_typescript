@@ -1,0 +1,67 @@
+@import '../../styles/settings.scss';
+
+
+img{
+  padding-top: 5px;
+  padding-bottom:5px;
+  width: 100%;
+}
+
+.close{
+  border: 0px;
+  background-color: white; 
+  font-size: 24px;
+}
+
+.custombtn {
+  color:#346DAA !important;
+  margin: 10px;
+  width: 140px;
+}
+
+.sr-only{
+  display:none;
+}
+
+.subbreedWrapper > .modal-content{
+  border-radius: unset;
+  border-top: $border;
+  border-bottom: $border;
+  border-right: none;
+  border-left: none;
+
+
+  .modal-title {
+    border-bottom: none; 
+    //padding: 15px;
+  }
+
+  .modal-body {
+    text-align: center;
+  }
+
+}
+
+.modal-header {
+  padding:  15px;
+  border-bottom: none;
+}
+
+.modal-title {
+  padding: 5px;
+  border-bottom: $border;
+}
+
+.modal-body {
+  margin: 0 5px;
+  color: #002e58;
+}
+
+.errorMessage {
+  text-align: center;
+  font-size: 18px;
+}
+
+.errorMessageTitle {
+  border: none;
+}
