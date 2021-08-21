@@ -12,21 +12,28 @@ const URL_START = "https://dog.ceo/api/breed/";
 const URL_END = "/images/random/3";
 const SUBBREED_URL_END = "/list";
 
+type MyState ={
+  error: any,
+  isLoaded: boolean;
+  allBreeds: string[];
+  imageURLs: string[];
+  show: boolean;
+  inputText: string;
+  subbreeds: string[];
+  selectedBreed: string;
+}
 
-
-class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      allBreeds: [],
-      imageURLs: [],
-      show: false,
-      inputText: "",
-      subbreeds: []
-    };
-  }
+class Main extends React.Component<any, MyState> {
+  state: MyState= {
+    error: null,
+    isLoaded: false,
+    allBreeds: [],
+    imageURLs: [],
+    show: false,
+    inputText: "",
+    subbreeds: [],
+    selectedBreed: ''
+  };
 
   componentDidMount() {
     fetch(`${ALL_DOGS_LIST}`)
@@ -47,7 +54,7 @@ class Main extends React.Component {
       );
   }
 
-  handleClick = (breed) => {
+  handleClick = (breed: string) => {
     fetch(`${URL_START}${breed}${SUBBREED_URL_END}`)
       .then((res) => res.json())
       .then((result) => {
@@ -78,8 +85,9 @@ class Main extends React.Component {
       );
   };
 
-  handleChange = (e) => {
+  handleChange = (e: any) => {
     this.setState({ inputText: e.target.value });
+    console.log('e', this.setState); 
   };
 
   handleClose = () => {
