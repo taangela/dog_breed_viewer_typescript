@@ -1,5 +1,5 @@
 import React from "react";
-import Allmodals from "../Allmodals/Allmodals.js";
+import Allmodals from "../Allmodals/Allmodals";
 import Form from "../Form/Form";
 import Button from 'react-bootstrap/Button';
 
@@ -16,7 +16,7 @@ type MyState ={
   error: any,
   isLoaded: boolean;
   allBreeds: string[];
-  imageURLs: string[];
+  imageurls: string[];
   show: boolean;
   inputText: string;
   subbreeds: string[];
@@ -29,7 +29,7 @@ class Main extends React.Component<any, MyState> {
     error: null,
     isLoaded: false,
     allBreeds: [],
-    imageURLs: [],
+    imageurls: [],
     show: false,
     inputText: "",
     subbreeds: [],
@@ -73,7 +73,7 @@ class Main extends React.Component<any, MyState> {
         (result) => {
           this.setState({
             isLoaded: true,
-            imageURLs: result.message,
+            imageurls: result.message,
             show: true
           });
         },
@@ -99,7 +99,7 @@ class Main extends React.Component<any, MyState> {
       error,
       isLoaded,
       allBreeds,
-      imageURLs,
+      imageurls,
       show,
       inputText,
       subbreeds,
@@ -121,12 +121,11 @@ class Main extends React.Component<any, MyState> {
         <div className={"container"}>
           <Form handleChange={this.handleChange} />
           <Allmodals
+            handleClose={this.handleClose}
             show={show}
-            imageurls={imageURLs}
+            imageurls={imageurls}
             subbreeds={subbreeds}
             breed={selectedBreed}
-            handleClose={this.handleClose}
-            onClick={this.handleClick}
           />
           <div className={"buttonsWrapper"}>
             {filterAllbreeds.map((breed) => (

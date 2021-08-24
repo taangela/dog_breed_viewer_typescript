@@ -6,18 +6,33 @@ import "./Allmodals.scss";
 const URL_START = "https://dog.ceo/api/breed/";
 const URL_END = "/images/random/3";
 
-class Allmodals extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+
+type Props = {
+  show: boolean,
+  imageurls: string[],
+  subbreeds: string[],
+  breed: string,
+  handleClose: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+type MyState ={
+  error: any,
+  subbreedURLs: [],
+  showModal: boolean,
+  errorMessage: boolean
+}
+
+
+class Allmodals extends React.Component<Props, MyState, any> {
+ state: MyState = {
       error: null,
       subbreedURLs: [],
       showModal: false,
       errorMessage: false
     };
-  }
+  
 
-  handleClick = (subbreed, breed) => {
+  handleClick = (subbreed:string, breed:string) => {
     fetch(`${URL_START}${breed}/${subbreed}${URL_END}`)
       .then((res) => res.json())
       .then(
