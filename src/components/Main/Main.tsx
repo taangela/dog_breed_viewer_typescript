@@ -1,6 +1,6 @@
 import React from "react";
 import Allmodals from "../Allmodals/Allmodals.js";
-import Form from "../Form/Form.js";
+import Form from "../Form/Form";
 import Button from 'react-bootstrap/Button';
 
 import  "./Main.scss";
@@ -22,6 +22,7 @@ type MyState ={
   subbreeds: string[];
   selectedBreed: string;
 }
+
 
 class Main extends React.Component<any, MyState> {
   state: MyState= {
@@ -85,10 +86,9 @@ class Main extends React.Component<any, MyState> {
       );
   };
 
-  handleChange = (e: any) => {
-    this.setState({ inputText: e.target.value });
-    console.log('e', this.setState); 
-  };
+  handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    this.setState({inputText: e.currentTarget.value})
+  }
 
   handleClose = () => {
     this.setState({ show: false });
@@ -119,7 +119,7 @@ class Main extends React.Component<any, MyState> {
       });
       return (
         <div className={"container"}>
-          <Form value={inputText} handleChange={this.handleChange} />
+          <Form handleChange={this.handleChange} />
           <Allmodals
             show={show}
             imageurls={imageURLs}

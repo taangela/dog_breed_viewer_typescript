@@ -2,8 +2,6 @@ import React from 'react';
 import Main from "../Main/Main";
 import './App.scss';
 
-
-
 function App() {
   return (
     <div className = "app">
@@ -16,4 +14,3 @@ function App() {
 export default App;
 
 
-//    <Main />

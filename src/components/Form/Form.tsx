@@ -1,15 +1,18 @@
 import React from "react";
-import styles from "./Form.scss";
+import  "./Form.scss";
 
-class Form extends React.Component {
+type  Props = {
+  handleChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+class Form extends React.Component<Props> {
   render() {
     return (
-      <form className ={styles}>
+      <form>
         <div>
           <label>Breeds search:</label>
           <input
             type="search"
-            value={this.props.inputText}
             onChange={this.props.handleChange}
           />
         </div>
@@ -19,5 +22,6 @@ class Form extends React.Component {
 }
 
 export default Form;
+
 
 
